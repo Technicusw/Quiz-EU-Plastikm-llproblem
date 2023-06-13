@@ -21,9 +21,11 @@ const spinner = new mojs.Shape({
 
 barba.init({
     transitions: [{
-        name: 'default-transition',
-        leave() {
-          spinner;
+        name: 'opacity-transition',
+        leave(data) {
+          return spinner.to(data.current.container, {
+            opacity: 0
+          });
         },
         enter() {
           // create your amazing enter animation here
