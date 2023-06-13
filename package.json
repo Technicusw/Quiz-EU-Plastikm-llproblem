@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "@mojs/core": "^1.5.1"
+    "@mojs/core": "^1.5.1",
+    "http-server": "^14.1.1"
   }
 }
