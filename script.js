@@ -47,3 +47,49 @@ button.addEventListener("click",start)
 function start(){
 
 }
+var transition = Barba.BaseTransition.extend({
+  start: function() {
+      // Animationselement erstellen
+      this.animationElement = document.createElement('div');
+      this.animationElement.classList.add('page-transition');
+      document.body.appendChild(this.animationElement);
+
+      // Animation starten
+      this.pageTransition();
+  },
+
+  pageTransition: function() {
+      var tl = new mojs.Timeline();
+
+      // Animationseffekte definieren
+      var burst = new mojs.Burst({
+          parent: this.animationElement,
+          duration: 1000,
+          shape: 'circle',
+          fill: 'white',
+          x: '50%',
+          y: '50%',
+          opacity: { 1: 0 },
+          radius: { 0: 200 },
+      });
+
+      tl.add(burst);
+
+      // Animation beenden und zur nächsten Seite wechseln
+      tl.on('complete', function() {
+          this.animationElement.parentNode.removeChild(this.animationElement);
+          this.done();
+      }.bind(this));
+
+      tl.play();
+  },
+});
+
+// Barba.js initialisieren
+Barba.Pjax.start();
+Barba.Prefetch.init();
+
+// Seitenwechsel-Transition hinzufügen
+Barba.Pjax.getTransition = function() {
+  return transition;
+};
