@@ -1,8 +1,9 @@
 const button = document.querySelector(".start")
 button.addEventListener("click",openRandomPage)
 var pages = [
-  /lückentext.html
-]
+  "/lückentext.html",
+  "/multiblechoice.html"
+];
 function openRandomPage() {
   if (pages.length === 0) {
     alert("Es wurden alle Seiten geöffnet.");
