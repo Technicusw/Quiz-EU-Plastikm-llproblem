@@ -1,5 +1,4 @@
-const button = document.querySelector(".start")
-button.addEventListener("click",openRandomPage)
+
 var pages = [
   "/lückentext.html",
   "/multiblechoice.html"
