@@ -1,19 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Other page</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/page2.html" aria-current="page">Other page</a>
-    </nav>
-    <main>
-      <h1>My other page</h1>
-    </main>
-  </body>
+<html>
+<head>
+  <title>Multiple-Choice-Seite</title>
+</head>
+<body>
+  <h1>Multiple-Choice-Fragen</h1>
+  <form id="quizForm">
+    <h3>Frage 1: Was ist die Hauptstadt von Frankreich?</h3>
+    <label>
+      <input type="checkbox" name="frage1" value="paris"> Paris
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="frage1" value="berlin"> Berlin
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="frage1" value="rom"> Rom
+    </label>
+    <br>
+
+    <h3>Frage 2: Welche Farbe hat eine Banane?</h3>
+    <label>
+      <input type="checkbox" name="frage2" value="gelb"> Gelb
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="frage2" value="rot"> Rot
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="frage2" value="blau"> Blau
+    </label>
+    <br>
+
+    <button type="button" onclick="berechnePunkte()">Punkte berechnen</button>
+  </form>
+
+  <script>
+    function berechnePunkte() {
+      var punkte = 0;
+
+      // Antworten der Frage 1 überprüfen
+      var frage1Antworten = document.getElementsByName("frage1");
+      for (var i = 0; i < frage1Antworten.length; i++) {
+        if (frage1Antworten[i].checked && frage1Antworten[i].value === "paris") {
+          punkte++;
+        }
+      }
+
+      // Antworten der Frage 2 überprüfen
+      var frage2Antworten = document.getElementsByName("frage2");
+      for (var j = 0; j < frage2Antworten.length; j++) {
+        if (frage2Antworten[j].checked && frage2Antworten[j].value === "gelb") {
+          punkte++;
+        }
+      }
+
+      alert("Du hast " + punkte + " von 2 Punkten erreicht.");
+    }
+  </script>
+</body>
 </html>
