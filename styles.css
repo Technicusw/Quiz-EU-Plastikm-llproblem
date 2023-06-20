@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+.Start-Button{
+  text-align: center;
+  text-decoration: none;
+  min-width: 2rem;
+  border-radius: 30%;
+  border: solid black;
+}
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
