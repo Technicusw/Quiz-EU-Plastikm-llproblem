@@ -9,7 +9,19 @@
   min-width: 2rem;
   border-radius: 30%;
   border: solid black;
+  background-color: #d4d4d4;
 }
+
+
+.nextPage{
+  text-align: center;
+  text-decoration: none;
+  min-width: 2rem;
+  border-radius: 30%;
+  border: solid black;
+  background-color: #d4d4d4;
+}
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
