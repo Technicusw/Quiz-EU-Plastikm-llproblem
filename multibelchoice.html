@@ -2,42 +2,47 @@
 <html>
 <head>
   <title>Multiple-Choice-Seite</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <h1>Multiple-Choice-Fragen</h1>
   <form id="quizForm">
     <h3>Frage 1: Was ist die Hauptstadt von Frankreich?</h3>
     <label>
-      <input type="checkbox" name="frage1" value="paris"> Paris
+      <input type="radio" name="frage1" value="paris"> Paris
     </label>
     <br>
     <label>
-      <input type="checkbox" name="frage1" value="berlin"> Berlin
+      <input type="radio" name="frage1" value="berlin"> Berlin
     </label>
     <br>
     <label>
-      <input type="checkbox" name="frage1" value="rom"> Rom
+      <input type="radio" name="frage1" value="rom"> Rom
     </label>
     <br>
 
     <h3>Frage 2: Welche Farbe hat eine Banane?</h3>
     <label>
-      <input type="checkbox" name="frage2" value="gelb"> Gelb
+      <input type="radio" name="frage2" value="gelb"> Gelb
     </label>
     <br>
     <label>
-      <input type="checkbox" name="frage2" value="rot"> Rot
+      <input type="radio" name="frage2" value="rot"> Rot
     </label>
     <br>
     <label>
-      <input type="checkbox" name="frage2" value="blau"> Blau
+      <input type="radio" name="frage2" value="blau"> Blau
     </label>
     <br>
 
     <button type="button" onclick="berechnePunkte()">Punkte berechnen</button>
   </form>
-
+  <button href="/lückentext.html" class="nextPage" id="Button" type="button"></button>
+  <footer>
+    <a>&copy;Quiz über das Plastikm&uuml;problem | all rights reserved | desined by Technicus</a>
+  </footer>
   <script>
+    var nexButton = document.querySelector(".nextPage")
     function berechnePunkte() {
       var punkte = 0;
 
@@ -58,11 +63,8 @@
       }
 
       alert("Du hast " + punkte + " von 2 Punkten erreicht.");
+      nexButton.textContent = "Nächte Seite"
     }
   </script>
 </body>
-
-<footer>
-  <a>&copy;Quiz über das Plastikm&uuml;problem | all rights reserved | desined by Technicus</a>
-</footer>
 </html>
