@@ -13,36 +13,16 @@
   </head>
   <body>
     <h1>Quiz über das Plastikm&uuml;problem</h1>
+    
     <main>
       <h3>Bereit?</h3>
-      <button onclick="openRandomPage()">Zufällige Seite öffnen</button>
+      <a href="multibelchoice.html" class="Start-Button">Hier Starten</a>
 
-  <script>
-    // Array mit den URLs der Seiten
-    var pages = [
-      '/lückentext.html',
-      '/multibelchoice.html'
-    ];
-
-    // Funktion zum Öffnen einer zufälligen Seite
-    function openRandomPage() {
-      if (pages.length === 0) {
-        alert("Es wurden alle Seiten geöffnet.");
-        return;
-      }
-
-      // Zufällige Indexnummer generieren
-      var randomIndex = Math.floor(Math.random() * pages.length);
-      
-      // Zufällige Seite öffnen
-      window.open(pages[randomIndex]);
-
-      // Geöffnete Seite aus dem Array entfernen
-      pages.splice(randomIndex, 1);
-    }
-  </script>
+ 
     </main>
-  
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/EeGMvQLB7r0">
+    </iframe>
     <footer>
       <a>&copy;Quiz über das Plastikm&uuml;problem | all rights reserved | desined by Technicus</a>
     </footer>
