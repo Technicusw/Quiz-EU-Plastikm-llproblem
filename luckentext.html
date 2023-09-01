@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>L&uuml;ckentext mit Dropdown-Menüs</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <h1>L&uuml;ckentext</h1>
+
+  <p>Die Hauptstadt von <select id="luecke1">
+    <option value="">w&auml;hle aus</option>
+    <option value="Deutschland">Deutschland</option>
+    <option value="Frankreich">Frankreich</option>
+    <option value="Italien">Italien</option>
+  </select> ist Berlin.</p>
+
+  <p>Die längste Fluss in der Welt ist der <select id="luecke2">
+    <option value="">w&auml;hle aus</option>
+    <option value="Nil">Nil</option>
+    <option value="Amazonas">Amazonas</option>
+    <option value="Mississippi">Mississippi</option>
+  </select>.</p>
+
+  <button onclick="auswerten()">Auswerten</button>
+
+  <script>
+    function auswerten() {
+      var luecke1 = document.getElementById("luecke1");
+      var luecke2 = document.getElementById("luecke2");
+
+      if (luecke1.value === "" || luecke2.value === "") {
+        alert("Bitte fülle alle Lücken aus.");
+        return;
+      }
+
+      if (luecke1.value === "Deutschland" && luecke2.value === "Nil") {
+        alert("Richtig! Du hast den Lueckentext korrekt ausgefuellt.");
+      } else {
+        alert("Falsch! Bitte ueberpruefe deine Antworten.");
+      }
+      color(luecke1, "Deutschland");
+      color(luecke2, "Nil");
+    }
+    function color(object, correct){
+      if (object.value != correct) {
+        object.style.backgroundColor = "red";
+      }else{
+        object.style.backgroundColor = "lime";
+      }
+    }
+  </script>
+  
+   <canvas id="canvas">Canvas not supported.</canvas>
+</body>
+</html>

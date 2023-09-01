@@ -3,67 +3,142 @@
 <head>
   <title>Multiple-Choice-Seite</title>
   <link rel="stylesheet" href="styles.css"/>
+  <script type="module" src="script.js"></script>
 </head>
 <body>
   <h1>Multiple-Choice-Fragen</h1>
   <form id="quizForm">
-    <h3>Frage 1: Was ist die Hauptstadt von Frankreich?</h3>
+    <h3>Frage 1: Was ist eine Initiative?</h3>
     <label>
-      <input type="radio" name="frage1" value="paris"> Paris
+      <input type="radio" name="frage1" value="Zeit"> Eine zeitlich begrenzte und zielt darauf ab bestimmte ziele zu erreichen.
     </label>
     <br>
     <label>
-      <input type="radio" name="frage1" value="berlin"> Berlin
+      <input type="radio" name="frage1" value="kuchen"> Eine spezielle Art von Kuchen, die traditionell zu feierlichen Anl&auml;ssen serviert wird und mit exotischen Gew&uuml;rzen aromatisiert ist.
     </label>
     <br>
     <label>
-      <input type="radio" name="frage1" value="rom"> Rom
+      <input type="radio" name="frage1" value="Ziel"> Eine aktive Aktion oder Vorsto&szlig;, um ein Ziel zu erreichen oder ein Problem anzugehen.
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage1" value="Zusammenschluss"> Eine Zusammenschluss von Menschen, die gemeinsame Ziele oder Ideale verfolgen.
     </label>
     <br>
 
-    <h3>Frage 2: Welche Farbe hat eine Banane?</h3>
+    <h3>Frage 2: Was ist eine Initiative der EU?</h3>
     <label>
-      <input type="radio" name="frage2" value="gelb"> Gelb
+      <input type="radio" name="frage2" value="geld"> Bargeldabschaffung
     </label>
     <br>
     <label>
-      <input type="radio" name="frage2" value="rot"> Rot
+      <input type="radio" name="frage2" value="bildung"> Einheitsbildungssystem
     </label>
     <br>
     <label>
-      <input type="radio" name="frage2" value="blau"> Blau
+      <input type="radio" name="frage2" value="Plastik"> Einwegplastik-Richtlinie
     </label>
     <br>
+    <label>
+        <input type="radio" name="frage2" value="abschaffung"> Abschaffung der nationalen Sprachen
+    </label>
+    <br>
+
+    <h3>Frage 3: Wann wurde die Einwegpastik-Richtlinie verabschiedet?</h3>
+    <label>
+        <input type="radio" name="frage3" value="2019">5. Juli 2019
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage3" value="2020">5. Juli 2020
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage3" value="2021">5. Juli 2021
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage3" value="2018">5. Juli 2018
+    </label>
+    <br>
+
+    <h3>Frage 4: Was behandelt die Einwegplastik-Richtlinie?</h3>
+    <label>
+        <input type="radio" name="frage4" value="fördern">hat zum Ziel, die Verwendung von Einwegplastik zu f&ouml;rdern und den Einsatz von umweltfreundlichen Alternativen wie Mehrwegplastik zu verhindern.
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage4" value="beschränken">beschr&auml;nkt sich nur auf einige spezifische Einwegplastikprodukte wie Trinkhalne und R&uuml;hrst&auml;bchen.
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage4" value="behandeln">legt fest, dass Einwegplastikprodukte mit besonderen Chemikalien und Zusatzstoffen behandelt werden m&uuml;ssen.
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage4" value="Problem">behandelt das Problem der Umweltverschmutzung durch bestimmte Einwegprodukte
+    </label>
+    <br>
+
+    <h3>Frage 5: Was hat dieses Gesetz an Erfolgen kennzuzeichnen? </h3>
+    <label>
+        <input type="radio" name="frage5" value="alternativen"> F&ouml;rderung von Alternativen
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage5" value="mehr">mehr Plastik
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage5" value="weniger">weniger Alternativen
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="frage5" value="Kuchen"> mehr kuchen
+    </label>
+    <br>
+
 
     <button type="button" onclick="berechnePunkte()">Punkte berechnen</button>
   </form>
-  <a href="/lückentext.html" class="nextPage"></a>
-  <footer>
-    <a>&copy;Quiz über das Plastikm&uuml;problem | all rights reserved | desined by Technicus</a>
-  </footer>
+  <nav class="na">
+    <a href="/luckentext.html" class="nextPage">N&auml;chste Seite</a>
+    </nav>
+    <canvas id="canvas"> Canvas nicht unterst&uuml;zt:</canvas>
+
   <script>
-    var nexButton = document.querySelector(".nextPage")
+    var na = document.querySelector(".na");
+    var nexButton = document.querySelector(".nextPage");
+    na.style.display = "none";
+
     function berechnePunkte() {
-      var punkte = 0;
+        var punkte = 0;
 
-      // Antworten der Frage 1 überprüfen
-      var frage1Antworten = document.getElementsByName("frage1");
-      for (var i = 0; i < frage1Antworten.length; i++) {
-        if (frage1Antworten[i].checked && frage1Antworten[i].value === "paris") {
-          punkte++;
+        // Antworten der Frage 1 überprüfen
+         var frage1Antworten = document.getElementsByName("frage1");
+         var frage2Antworten = document.getElementsByName("frage2");
+         var frage3Antworten = document.getElementsByName("frage3");
+         var frage4Antworten = document.getElementsByName("frage4");
+         var frage5Antworten = document.getElementsByName("frage5");
+        for (var i = 0; i < 4; i++) {
+             if (frage1Antworten[i].checked && frage1Antworten[i].value === "Ziel") {
+                punkte++;
+            }
+            if (frage2Antworten[i].checked && frage2Antworten[i].value === "Plastik") {
+                punkte++;
+            }
+            if (frage3Antworten[i].checked && frage3Antworten[i].value === "2019") {
+                punkte++;
+            }
+            if (frage4Antworten[i].checked && frage4Antworten[i].value === "Problem"){
+                punkte++;
+            }
+            if (frage5Antworten[i].checked && frage5Antworten[i].value === "alternativen"){
+                punkte++;
+            }
         }
-      }
 
-      // Antworten der Frage 2 überprüfen
-      var frage2Antworten = document.getElementsByName("frage2");
-      for (var j = 0; j < frage2Antworten.length; j++) {
-        if (frage2Antworten[j].checked && frage2Antworten[j].value === "gelb") {
-          punkte++;
-        }
-      }
-
-      alert("Du hast " + punkte + " von 2 Punkten erreicht.");
-      nexButton.textContent = "Nächte Seite"
+        alert("Du hast " + punkte + " von 5 Punkten erreicht!");
     }
   </script>
 </body>
