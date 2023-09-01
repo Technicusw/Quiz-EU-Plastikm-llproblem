@@ -1,0 +1,17 @@
+name: Deploy
+run-name: ${{ github.actor}} deploy
+on: [push]
+  branches:
+  - main
+jobs:
+  check-bat-version:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      uses: actions/checkout@v3
+      uses: XPH0816/webdav-deploy-action@v0.3
+      with:
+        url: ${{ secrets.WEBDAV_URL }}
+        username: ${{ secrets.WEBDAV_USERNAME }}
+        password: ${{ secrets.WEBDAV_PASSWORD }}
+        local: "./"
