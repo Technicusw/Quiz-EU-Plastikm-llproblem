@@ -1,5 +1,5 @@
 
-run-name: ${{ github.actor}} deploy
+name: ${{ github.actor}} deploy
 on:
   push:
     branches:
