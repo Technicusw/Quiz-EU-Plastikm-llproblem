@@ -1,4 +1,4 @@
-name: Deploy
+
 run-name: ${{ github.actor}} deploy
 on:
   push:
