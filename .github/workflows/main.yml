@@ -1,18 +1,21 @@
-
-name: ${{ github.actor}} deploy
+name: deploy action
 on:
   push:
     branches:
-      - main
+      -main
 jobs:
-  deploy:
+  deploy_job:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v3
-      uses: XPH0816/webdav-deploy-action@v0.3
-      with:
-        url: ${{ secrets.WEBDAV_URL }}
-        username: ${{ secrets.WEBDAV_USERNAME }}
-        password: ${{ secrets.WEBDAV_PASSWORD }}
-        local: "./"
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: deploy
+        uses: ./
+        with:
+          url: ${{ secrets.WEBDAV_URL }}
+          username: ${{ secrets.WEBDAV_USERNAME }}
+          password: ${{ secrets.WEBDAV_PASSWORD }}
+          local-path: "./"
+          sftpArgs: "-o ConnectTimeout=5"
